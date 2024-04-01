@@ -1,0 +1,101 @@
+body {
+    color: black;
+    background-color: #b7daf6;
+    font-family: 'Roboto';
+    
+}
+
+.container {
+    width: 80%;
+    max-width: 1200px;
+    margin: auto;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em;
+    height: 100vh;
+}
+
+.Title {
+    margin-top: 2em;
+    font-size: 3em;
+}
+
+.introduction {
+    max-width: 50%;
+    font-size: 1.1em;
+}
+
+.code-boxes {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    gap: 6em; 
+    flex-wrap: wrap; 
+    resize: both;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.code-giving-section {
+    
+    min-width: 250px;
+    min-height: 300px; 
+    padding: 10px; 
+    font-size: 0.6rem; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.code-rating-section {
+    flex-grow: 1; 
+    min-width: 250px; 
+    height: 300px; 
+    padding: 10px;
+    font-size: 0.6em; 
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #efefef;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+#loading-icon {
+    margin-top: 2em;
+    border: 0.25em solid #f3f3f3;
+    border-top: 0.25em solid #000000;
+    border-radius: 50%;
+    width: 2.5em;
+    height: 2.5em;
+    animation: spin 2s linear infinite;
+}
+
+.get-rating-button {
+    padding: 10px 20px;
+    font-size: 18px;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    box-shadow: 1px;
+    margin-bottom: 3em;
+}
+
+@media (max-width: 600px) {
+    .Title {
+        font-size: 1.5em;
+    }
+
+    .introduction {
+        font-size: 0.8em;
+    }
+}

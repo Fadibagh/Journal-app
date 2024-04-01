@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>rate-my-code</title>
+        <link rel="stylesheet" href="./static/css/rate_my_code.css">
+    </head>
+
+    <body>
+
+        <div class="container">
+            <h2 class="Title">Rate My Code!</h2>
+            <p class="introduction">Hello and welcome to Rate My Code. This is an interactive website where given a piece of code, it uses chatgpt 3.5 turbo API to rate your code based on <b>Readability, Style and Structure, Robustness and Error Handling.</b></p>
+            
+            <div class="code-boxes">
+
+                <div>
+                    <textarea class="code-giving-section" type="text" id="code-giving-section" placeholder="Paste your code here..."></textarea>
+                </div>
+                <div>
+                    <textarea class="code-rating-section" type="text" id="code-rating-section" placeholder="Rating will be displayed here..." readonly></textarea>
+                </div>
+
+            </div>
+
+            <button class="get-rating-button" onclick="get_rating()">Get Rating</button>
+
+            <div id="loading-icon" class="hidden" ></div>
+            
+        </div>
+
+        <script>
+            function get_rating() {
+                const user_code = document.getElementById('code-giving-section').value;
+                document.getElementById('loading-icon').classList.remove('hidden');
+
+                fetch('http://127.0.0.1:5000/get-rating', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({user_code: user_code})
+                })
+                .then(response => response.json())
+                .then(data => {
+                    document.getElementById('loading-icon').classList.add('hidden');
+                    display_output(data.code_rating);
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                })
+
+            }
+
+            function display_output(code_rating) {
+                const code_rating_section = document.getElementById('code-rating-section');
+                code_rating_section.value = code_rating;
+            }
+        </script>
+
+    </body>
+</html>
