@@ -34,7 +34,7 @@
                 const user_code = document.getElementById('code-giving-section').value;
                 document.getElementById('loading-icon').classList.remove('hidden');
 
-                fetch('http://127.0.0.1:5000/get-rating', {
+                fetch('https://rate-my-code-5113637cd44b.herokuapp.com/get-rating', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',

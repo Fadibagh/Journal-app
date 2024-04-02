@@ -40,4 +40,4 @@ def get_rating():
     return jsonify({"code_rating": code_rating})
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
