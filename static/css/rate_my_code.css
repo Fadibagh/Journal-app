@@ -75,6 +75,7 @@ body {
     width: 2.5em;
     height: 2.5em;
     animation: spin 2s linear infinite;
+    margin-bottom: 1em;
 }
 
 .get-rating-button {
