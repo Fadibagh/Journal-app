@@ -1,8 +1,7 @@
 body {
     color: black;
     background-color: #b7daf6;
-    font-family: 'Roboto';
-    
+    font-family: 'Roboto';    
 }
 
 .container {
@@ -14,12 +13,11 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 1em;
-    height: 100vh;
 }
 
 .Title {
-    margin-top: 1em;
     font-size: 3em;
+    margin-bottom: 0.2em;
 }
 
 .introduction {
@@ -84,7 +82,7 @@ body {
     color: white;
     background-color: #007bff;
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
     box-shadow: 1px;
     margin-bottom: 2em;
