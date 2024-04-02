@@ -17,7 +17,7 @@ def get_rating():
         return jsonify({"error": "No code topic provided"}), 400
     
     messages = [
-        {"role": "system", "content": "You are an expert at rating python code"},
+        {"role": "system", "content": "You are an expert at rating code"},
         {"role": "system", "content": "For the code you are given, rate it based on Readability, Style and Structure, Robustness, and Error Handling."},
         {"role": "system", "content": "In your reply, give the rating for each subject out of a 100 and give some comments on how it could be better."},
         {"role": "system", "content": "Keep it breif"},
