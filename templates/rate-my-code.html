@@ -33,6 +33,10 @@
             function get_rating() {
                 const user_code = document.getElementById('code-giving-section').value;
                 document.getElementById('loading-icon').classList.remove('hidden');
+                window.scrollTo({
+                                top: document.body.scrollHeight,
+                                behavior: 'smooth' // Optional: Adds a smooth scrolling effect
+                            });
 
                 fetch('https://rate-my-code-5113637cd44b.herokuapp.com/get-rating', {
                     method: 'POST',
