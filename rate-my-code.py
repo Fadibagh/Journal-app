@@ -17,17 +17,20 @@ def get_rating():
         return jsonify({"error": "No code topic provided"}), 400
     
     messages = [
-        {"role": "system", "content": "You are an expert at rating code"},
-        {"role": "system", "content": "For the code you are given, rate it based on Readability, Style and Structure, Robustness and Error Handling."},
+        {"role": "system", "content": "You are an expert at rating python code"},
+        {"role": "system", "content": "For the code you are given, rate it based on Readability, Style and Structure, Robustness, and Error Handling."},
         {"role": "system", "content": "In your reply, give the rating for each subject out of a 100 and give some comments on how it could be better."},
         {"role": "system", "content": "Keep it breif"},
+        {"role": "system", "content": "Try to be inline with relevant up-to-date practices"},
+        {"role": "system", "content": "separate content into bullet points"},
+        {"role": "system", "content": "After your review, give specfic examples on what to change you think it needs to happen"},
         {"role": "user", "content": user_code}
     ]
 
     completion = client.chat.completions.create(
         model="gpt-3.5-turbo",
         messages=messages,
-        max_tokens=1000
+        max_tokens=2000
     )
 
     print(completion.usage.total_tokens)

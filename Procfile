@@ -1,0 +1,1 @@
+web gunicorn rate-my-code:app
