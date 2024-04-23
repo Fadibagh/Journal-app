@@ -1,7 +1,11 @@
 body {
     color: black;
     background-color: #b7daf6;
-    font-family: 'Roboto';    
+    font-family: 'Roboto';  
+    display: flex;
+    justify-content: center; 
+    align-content: center;  
+
 }
 
 .container {
@@ -27,7 +31,7 @@ body {
 .code-boxes {
     display: flex;
     justify-content: center; 
-    align-items: center; 
+    align-content: center; 
     gap: 6em; 
     flex-wrap: wrap; 
     resize: both;
